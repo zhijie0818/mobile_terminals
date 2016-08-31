@@ -1,0 +1,61 @@
+/* CSS Document */
+body{ margin: 0px; }
+.wrap{ width: 100%; }
+input{ outline:none;}
+.common{ width: 56%; margin: auto; position: relative;  }
+/*one*/
+
+.one_table{ height: 200px; width: 50%; position: absolute; bottom: 26%; left: 50%; right: 50%; margin-left: -28%; }
+
+.people_img{ height: 33%; width: 5%; position: absolute; top: 36%}
+.input_name{  margin-left: 10%; margin-top: 2%; height:65%; width: 80% ; border-radius: 30px; border:none; padding-left: 4%;color:#898989 ; font-size: 20px; }
+.name_column{ position: absolute;bottom: 31%; height: 4%;  left: 26%; width: 50%;}
+.tel_column{ bottom:27%;}
+.code_column{ bottom:23%;}
+.input_code{ width:41%; margin-top:3%}
+.get_code{ margin-left:5%; width:33%; height:66%; margin-top:-1%;top: 27%}
+.open_account{ display:block; height:5%; width:42%; position:absolute; bottom:20%; left:50%; right:50%; margin-left:-19%; }/*bottom:14%;*/
+.open_account img{ width:100%; height:100%}
+.code_a{display:block; margin-left:55%;}
+/*two*/
+.trade_description_a{ position: absolute;height: 30%; width: 20%;  bottom: 60%; left: 50%; right: 50%; margin-left: -42% }
+.trade_description_b{  margin-left: -9% }
+.trade_description_c{  margin-left: 22% }
+.trade_a{ display: block;height: 70%; width: 99%;  }
+.trade_aa{ display: block; height: 30%; width: 99%;  }
+.trade_a .trade_img{ height: 90%; width: 90% }
+.trade_description_d{ position: absolute;height: 30%; width: 20%;  bottom: 12%; left: 50%; right: 50%; margin-left: -42% }
+.trade_description_e{ margin-left: -9%; }
+.trade_description_f{  margin-left: 22% }
+.trade_word{ height: 140%; width: 100%; }
+/*three*/
+
+.img_details{ height: 100%; width: 100%; }
+.details_a{ display: block;position: absolute; height: 7%; width: 44%; bottom:3%; left: 50%; right: 50%; margin-left:-22%;}
+/*four*/
+
+.input_name_b{ height: 100%; }
+.name_column_b{ bottom: 45%; }
+.tel_column_b{ bottom: 38%; }
+.code_column_b{ bottom: 31%; }
+.get_code_b{ height: 110%; width: 35%; margin-top: 1%;top: 20%; }
+.people_img_b{height: 55%; width: 5%; position: absolute; top: 54%}
+.open_account_b{ display: block; height: 8%; width:42%;position: absolute; bottom: 25%; left:31%; }/*bottom:15%*/
+.open_account_b img{ width:100%; height:100%}
+@media screen and (max-width:768px) {
+	.people_img{  top: 40%}
+	.people_img_b{top: 64%}
+	.input_name{  height:63%;  padding-top: 2%;}
+	.common{ width: 100%; }
+	.input_name{ font-size: 11px;}
+	.name_column{ bottom: 29%; height: 5% }
+	.tel_column{ bottom: 24% }
+	.code_column{ bottom:19%;}
+.get_code{height:74%; top: 23%}	
+.get_code_b{ height: 114%;top: 18%; }
+.input_name_b{ height: 100%; }
+.name_column_b{ bottom: 42%; }
+.tel_column_b{ bottom: 33%; }
+.code_column_b{ bottom: 24%; }
+.open_account_b{  bottom: 22%; }/*bottom:13%*/
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=yes;" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+
+    <title>在握国际</title>
+    <link rel="Shortcut Icon" href="/images/Zaiwo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="css/phone_zwoil.css">
+
+    <!-- Layer -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/layer/layer/layer.js"></script>
+
+    <!-- JS -->
+    <script type="text/javascript">
+        $(function () {
+            $("#applyButtonA").click(function () {
+                applyAccount('A');
+            });
+            $("#applyButtonB").click(function () {
+                applyAccount('B');
+            });
+        });
+
+        /**
+         *
+         **/
+        function applyAccount(type) {
+            if ($("#username" + type).val() == '' || $("#username" + type).val() == '输入姓名') {
+                layer.alert('请输入姓名！', 8);
+                //layer.tips('请输入姓名！', "#username" + type, {tips: 1});
+                $("#username" + type).focus();
+                return false;
+            }
+
+            if ($("#mobile" + type).val() == '') {
+                layer.alert("手机号码不能为空！", 8);
+                //layer.tips('手机号码不能为空！', "#mobile" + type, {tips: 1});
+                $("#mobile" + type).focus();
+                return false;
+            }
+            if (!isMobile($("#mobile" + type).val())) {
+                layer.alert("请输入正确的手机号码！", 8);
+                //layer.tips('请输入正确的手机号码！', "#mobile" + type, {tips: 1});
+                $("#mobile" + type).focus();
+                return false;
+            }
+
+            var loading = layer.load('正在加载数据...', 0);
+            $.ajax({
+                url: 'http://www.minioil.cn/api/zwOpenAccount.php',
+                type: 'post',
+                data: decodeURIComponent($('#applyForm'+type).serialize(), true),
+                dataType: 'json', // 接受数据格式
+                error: function (json) {
+                },
+                async: true,// 异步加载
+                beforeSend: function () {
+                },
+                success: function (json) {
+                    layer.close(loading); // 关闭加载层
+                    if (json == 'success') {
+                        layer.msg("预约成功！", {icon: 6});
+
+                        //
+                        //$("input[name='username']").hide();
+                        //$("input[name='mobile']").hide();
+                        //applyButtonA
+                    } else {
+                        layer.msg("预约失败！", {icon: 2});
+                    }
+                }
+            });
+        }
+
+        /*
+         *
+         */
+        function isMobile(str) {
+            var regStr = /(^1[3|4|5|6|8]\d{9}$)|(^[5|6|8|9]\d{7}$)/;
+            return regStr.test(str);
+        }
+    </script>
+
+    <!-- Baidu -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?4566b3308919c925cbcbacb3cc1d0948";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<div class="warp">
+    <!--第1张开始-->
+    <div class="div_in1">
+        <img src="imgs/1.1.png" width="100%"/>
+
+        <!--输入姓名-电话开始-->
+        <div class="name_tel">
+            <form action="#" id="applyFormA" method="post">
+                <table class="w_table">
+                    <tr class="import_name">
+                        <td>
+                            <img src="imgs/people.png" class="name"/>
+                            <input name="username" id="usernameA" type="text" value="输入姓名" class="input_name"
+                                   onfocus="if(this.value=='输入姓名') {this.value=''}"
+                                   onblur="if (this.value=='') {this.value='输入姓名'}"/>
+                        </td>
+                    </tr>
+                    <tr class="import_name">
+                        <td>
+                            <img src="imgs/tel.png" class="name phone "/>
+                            <input name="mobile" id="mobileA" type="text" value="输入手机号码" class="input_tel"
+                                   onfocus="if(this.value=='输入手机号码') {this.value=''}"
+                                   onblur="if (this.value=='') {this.value='输入手机号码'}"/>
+                        </td>
+                    </tr>
+                    <tr class="import_name" id="get_a" style="display: None">
+                        <td>
+                            <img src="imgs/lock.png" class="lock"/>
+                            <input type="text" value="输入验证码" class="input_name input_code"
+                                   onfocus="if(this.value=='输入验证码') {this.value=''}"
+                                   onblur="if (this.value=='') {this.value='输入验证码'}"/>
+                            <img src="imgs/auth_code.png" class="auth_code" onclick="get_num()">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!--输入姓名-电话结束-->
+
+        <!--预约开户-开始-->
+        <div class="open_account" id="applyButtonA">
+            <img src="imgs/open_account.png">
+        </div>
+        <!--预约开户-结束-->
+    </div>
+    <!--第1张结束-->
+
+    <!--第2，3，4张开始-->
+    <div class="div_in2">
+        <img src="imgs/2.jpg" width="100%"/>
+        <img src="imgs/3.jpg" width="100%"/>
+        <img src="imgs/4.jpg" width="100%"/>
+    </div>
+    <!--第2，3，4张结束-->
+
+    <!--第5张开始-->
+    <div class="div_in3">
+        <img src="imgs/5.5.png" width="100%"/>
+        <a href="http://www.minioil.cn/contest2016/index.html" target="_blank" class="Com_details">
+            <img src="imgs/Com_details.png">
+        </a>
+    </div>
+    <!--第5张结束-->
+
+    <!--第6张开始-->
+    <div class="div_in1">
+        <img src="imgs/6.jpg" width="100%"/>
+        <!--输入姓名-电话开始-->
+        <div class="name_tel name_tel_six">
+            <form action="#" id="applyFormB" method="post">
+                <table class="w_table">
+                    <tr class="import_name">
+                        <td>
+                            <img src="imgs/people.png" class="name"/>
+                            <input name="username" id="usernameB" type="text" value="输入姓名" class="input_name"
+                                   onfocus="if(this.value=='输入姓名') {this.value=''}"
+                                   onblur="if (this.value=='') {this.value='输入姓名'}"/>
+                        </td>
+                    </tr>
+                    <tr class="import_name">
+                        <td>
+                            <img src="imgs/tel.png" class="name phone "/>
+                            <input name="mobile" id="mobileB" type="text" value="输入手机号码" class="input_tel"
+                                   onfocus="if(this.value=='输入手机号码') {this.value=''}"
+                                   onblur="if (this.value=='') {this.value='输入手机号码'}"/>
+                        </td>
+                    </tr>
+                    <tr class="import_name" id="get_a_1" style="display: None">
+                        <td>
+                            <img src="imgs/lock.png" class="lock"/>
+                            <input type="text" value="输入验证码" class="input_name input_code"
+                                   onfocus="if(this.value=='输入验证码') {this.value=''}"
+                                   onblur="if (this.value=='') {this.value='输入验证码'}"/>
+                            <img src="imgs/auth_code.png" class="auth_code" onclick="get_num_1()">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+        <!--输入姓名-电话结束-->
+
+        <!--预约开户-开始-->
+        <div class="open_account" id="applyButtonB">
+            <img src="imgs/open_account.png">
+            </a>
+            <!--预约开户-结束-->
+
+        </div>
+        <!--第6张结束-->
+
+    </div>
+</body>
+</html>
