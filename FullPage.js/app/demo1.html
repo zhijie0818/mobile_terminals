@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>FullPage.js</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<!-- <div id="header">Header</div> -->
+<!-- <ul id="fullpageMenu"> 
+	<li data-menuanchor="page1" class="active">
+		<a href="#page1">1 section</a>
+	</li>
+	<li data-menuanchor="page2">
+		<a href="#page2">2 section</a>
+	</li>
+	<li data-menuanchor="page3">
+		<a href="#page3">3 section</a>
+	</li>
+	<li data-menuanchor="page4">
+		<a href="#page4">4 section</a>
+	</li>
+</ul> -->
+	<div id="fullpage">
+		<div class="section"> 
+			<h1>第一屏</h1>
+		</div>
+		<div class="section "><!-- active -->
+			<div class="slide">slide 1</div>
+			<div class="slide">slide 2</div>
+			<div class="slide">slide 3</div>
+			<div class="slide">slide 4</div>
+		</div>
+		<div class="section"> 内容3
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡的凤凰阿迪凤凰</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+			<p>费哈库拉凤凰阿卡、</p>
+		<p>费哈库拉凤凰阿卡、</p>
+
+
+		</div>
+		<div class="section">
+			<img data-src="imgs/ruby.jpg">
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/vendors/jquery.easings.min.js"></script>
+	<script type="text/javascript">
+		//激活fullpage效果
+		$(document).ready(function(){
+			//fullpage配置项
+			$('#fullpage').fullpage({
+				//每一页的背景颜色
+				sectionsColor:['#666','orange','pink','gray'],
+				//设置slide的箭头,默认true
+				// controlArrows:false,
+				//每一页的内容是否居中,默认true
+				//verticalCentered:true,
+				//字体是否随着窗口缩放而缩放，默认false
+				//resize:true,
+				//滚动速度，默认700，单位毫秒
+				scrollingSpeed:800,
+				//定义锚链接，默认[]
+				anchors:['page1','page2','page3','page4'],
+				//是否锁定锚链接，默认false
+				// lockAnchors:true,
+				// css3:true,
+				//滚动到最顶部后是否连续滚动到底部，默认false
+				//loopTop:true,
+				//滚动到最底部后是否连续滚动回顶部，默认false
+				//loopBottom:true,
+				//横向slider幻灯片是否循环滚动。默认true
+				// loopHorizontal:false,
+				// 是否使用插件的滚动方式，默认true
+				//autoScrolling:false,
+				//是否包含滚动条，默认false
+				//scrollBar:true,
+				//设置每个section顶部和底部的padding，默认为0
+				// paddingTop:'20px',
+				// paddingBottom:'20px',
+				//固定顶部元素
+				//fixedElements:'#header',
+				//是否可以使用键盘方向键导航，默认true
+				// keyboardScrolling:false,
+				//在移动设备上滑动页面的敏感性默认为5值越大在移动页面上越难滑动！
+				//touchSensitivity:5,
+				//是否循环滚动，默认false,和loopTop,loopBottom不能同时使用
+				continuousVertical:true,
+				//锚链接是否可以控制滚动动画， 默认true
+				// animateAnchor:false,
+				// 是否记录历史，默认true，注意如果设置了sutoScrolling:false,那么这个配置也将被关闭，集设置为false
+				// recordHistory:false,
+				// 绑定菜单，设定的相关属性与anchors的值对应后，菜单可以控制滚动，默认为false
+				// menu:'#fullpageMenu',
+				//是否显示导航，默认false
+				navigation:true,
+				//导航小圆点的位置，可以设置为left或者right
+				navigationPosition:'right',
+				//导航小圆点的tooltips设置，默认为[],注意按照顺序设置(这里是鼠标移上小圆点显示提示的内容)
+				 navigationTooltips:['page1','page2','page3','page4'],
+				 //是否显示当前页面的导航的tooltip信息默认false(这里鼠标不用移上去上面一个配置项的内容就可以显示了)
+				 showActiveTooltip:true,
+				 //横向幻灯片导航的位置，默认bottom
+				 slidesNavigation:true,
+				 //横向幻灯片导航的位置，默认为bottom
+				 slidesNavPosition:'top',
+				 //内容超过满屏后是否显示滚动条，默认false,
+				 //scrollOverflow:true,
+				 //section的选择器默认.section
+				 //sectionSelector:
+				 //slide的选择器，默认为.slide
+				 //slideSelector:
+				 //回调函数
+				 afterLoad:function(anchorLink,index){
+				 		console.log("afterLoad:anchorLink="+anchorLink+";index="+index);
+				 },
+				  onLeave:function(index,nextIndex,direction){
+				 		console.log("onLeave:index="+index+";nextIndex="+nextIndex+";direction="+direction);
+				 },
+			});
+		})
+	</script>
+</body>
+</html>

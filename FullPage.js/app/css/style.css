@@ -1,0 +1,4 @@
+body{color: #fff;}
+#header{font-size: 30px;position: fixed;top: 0;right: 200px;}
+.slide{text-align: center;font-size: 20px;}
+#fullpageMenu{position: fixed;top:0; z-index: 999;font-size: 30px;}
