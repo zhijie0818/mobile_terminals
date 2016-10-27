@@ -1,9 +1,9 @@
-		$(function(){
+$(function(){
 			$("#fullpage").fullpage({
 				verticalCentered:true,
-				anchors:['page1','page2','page3','page4','page5'],
+				anchors:['page1','page2','page3','page4','page5','page6'],
 				navigation:true,
-				navigationTooltips:['page1','page2','page3','page4','page5'],
+				navigationTooltips:['page1','page2','page3','page4','page5','page6'],
 				// sectionsColor:['#666','orange','pink','gray'],
 				afterLoad:function(link,index){
 					switch(index){
